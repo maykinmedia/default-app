@@ -26,7 +26,7 @@ will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://bitbucket.org/maykinmedia/default-app/get/master.zip --extension=py-tpl,rst,html,gitignore,json,in,ini,sh,cfg,yml,LICENSE <project_name> .
+    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,html,gitignore,json,in,ini,sh,cfg,yml,LICENSE <project_name> .
 
 {% endcomment %}
 
@@ -38,7 +38,7 @@ Welcome to {{ project_name }}'s documentation!
 =================================================
 
 :Version: 0.1.0
-:Source: https://bitbucket.org/maykinmedia/{{ project_name }}
+:Source: https://github.com/maykinmedia/{{ project_name }}
 :Keywords: ``<keywords>``
 :PythonVersion: 3.6
 
