@@ -40,7 +40,7 @@ Welcome to {{ project_name }}'s documentation!
 :Version: 0.1.0
 :Source: https://github.com/maykinmedia/{{ project_name }}
 :Keywords: ``<keywords>``
-:PythonVersion: 3.6
+:PythonVersion: 3.7
 
 |build-status| |requirements| |coverage|
 
