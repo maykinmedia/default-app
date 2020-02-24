@@ -26,7 +26,7 @@ will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,html,gitignore,json,in,ini,sh,cfg,yml,LICENSE <project_name> .
+    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,html,gitignore,json,in,ini,cfg,yml --name LICENSE <project_name> .
 
 {% endcomment %}
 
@@ -42,7 +42,7 @@ Welcome to {{ project_name }}'s documentation!
 :Keywords: ``<keywords>``
 :PythonVersion: 3.7
 
-|build-status| |requirements| |coverage|
+|build-status| |coverage| |black|
 
 |python-versions| |django-versions| |pypi-version|
 
@@ -64,9 +64,9 @@ Installation
 Requirements
 ------------
 
-* Python 3.6 or above
+* Python 3.7 or above
 * setuptools 30.3.0 or above
-* Django 1.11 or above
+* Django 2.2 or newer
 
 
 Install
@@ -84,16 +84,15 @@ Usage
 
 
 
-.. |build-status| image:: https://travis-ci.org/maykinmedia/{{ project_name }}.svg?branch=develop
+.. |build-status| image:: https://travis-ci.org/maykinmedia/{{ project_name }}.svg?branch=master
     :target: https://travis-ci.org/maykinmedia/{{ project_name }}
 
-.. |requirements| image:: https://requires.io/github/maykinmedia/{{ project_name }}/requirements.svg?branch=develop
-    :target: https://requires.io/github/maykinmedia/{{ project_name }}/requirements/?branch=develop
-    :alt: Requirements status
-
-.. |coverage| image:: https://codecov.io/gh/maykinmedia/{{ project_name }}/branch/develop/graph/badge.svg
+.. |coverage| image:: https://codecov.io/gh/maykinmedia/{{ project_name }}/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/maykinmedia/{{ project_name }}
     :alt: Coverage status
+
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
 
 .. |python-versions| image:: https://img.shields.io/pypi/pyversions/{{ project_name }}.svg
 
