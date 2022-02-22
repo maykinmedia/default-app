@@ -1,5 +1,6 @@
 include *.rst
 include LICENSE
+include {{ project_name }}/py.typed
 recursive-include {{ project_name }} *.html
 recursive-include {{ project_name }} *.txt
 recursive-include {{ project_name }} *.po
