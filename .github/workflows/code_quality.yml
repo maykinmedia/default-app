@@ -6,6 +6,7 @@ on:
     branches:
       - main
     tags:
+      - '*'
     paths:
       - '**.py'
   pull_request:
@@ -19,12 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        toxenv: [isort, black]
+        toxenv: [isort, black, flake8, docs]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.7'
+          python-version: '3.9'
       - name: Install dependencies
         run: pip install tox
       - run: tox

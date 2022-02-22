@@ -17,7 +17,7 @@ libraries:
 
 .. code-block:: bash
 
-    $ virtualenv env or virtualenv --python=/usr/bin/python3.6 env
+    $ virtualenv env or virtualenv --python=/usr/bin/python3.9 env
     $ source env/bin/activate
     $ pip install django
 
@@ -26,13 +26,9 @@ will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,html,gitignore,json,in,ini,cfg,yml --name LICENSE <project_name> .
+    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml --name LICENSE <project_name> .
 
 {% endcomment %}
-
-.. {{ project_name }} documentation master file, created by startproject.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 Welcome to {{ project_name }}'s documentation!
 =================================================
@@ -40,9 +36,9 @@ Welcome to {{ project_name }}'s documentation!
 :Version: 0.1.0
 :Source: https://github.com/maykinmedia/{{ project_name }}
 :Keywords: ``<keywords>``
-:PythonVersion: 3.7
+:PythonVersion: 3.9
 
-|build-status| |coverage| |black|
+|build-status| |code-quality| |black| |coverage| |docs|
 
 |python-versions| |django-versions| |pypi-version|
 
@@ -83,16 +79,24 @@ Usage
 <document or refer to docs>
 
 
+.. |build-status| image:: https://github.com/maykinmedia/{{ project_name }}/workflows/Run%20CI/badge.svg
+    :alt: Build status
+    :target: https://github.com/maykinmedia/{{ project_name }}/actions?query=workflow%3A%22Run+CI%22
 
-.. |build-status| image:: https://travis-ci.org/maykinmedia/{{ project_name }}.svg?branch=master
-    :target: https://travis-ci.org/maykinmedia/{{ project_name }}
+.. |code-quality| image:: https://github.com/maykinmedia/{{ project_name }}/workflows/Code%20quality%20checks/badge.svg
+     :alt: Code quality checks
+     :target: https://github.com/maykinmedia/{{ project_name }}/actions?query=workflow%3A%22Code+quality+checks%22
+
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
 
 .. |coverage| image:: https://codecov.io/gh/maykinmedia/{{ project_name }}/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/maykinmedia/{{ project_name }}
     :alt: Coverage status
 
-.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/psf/black
+.. |docs| image:: https://readthedocs.org/projects/{{ project_name }}/badge/?version=latest
+    :target: https://{{ project_name }}.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 .. |python-versions| image:: https://img.shields.io/pypi/pyversions/{{ project_name }}.svg
 
