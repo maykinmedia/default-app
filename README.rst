@@ -78,6 +78,15 @@ Usage
 
 <document or refer to docs>
 
+Local development
+=================
+
+To install and develop the library locally, use::
+
+.. code-block:: bash
+
+    pip install -e --no-build-isolation .[tests,coverage,docs,pep8,release]
+
 
 .. |build-status| image:: https://github.com/maykinmedia/{{ project_name }}/workflows/Run%20CI/badge.svg
     :alt: Build status
