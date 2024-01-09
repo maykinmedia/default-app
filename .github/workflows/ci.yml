@@ -1,0 +1,29 @@
+name: Run CI
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    name: Test the creation of a Django project from the template
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Django 4.2
+        run: pip install django~=4.2.0
+
+      - name: Run the startproject command
+        run: django-admin startproject --template . --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml --name LICENSE defaultapp .

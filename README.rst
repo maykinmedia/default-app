@@ -19,7 +19,7 @@ libraries:
 
     $ virtualenv env or virtualenv --python=/usr/bin/python3.10 env
     $ source env/bin/activate
-    $ pip install django
+    $ pip install django~=4.2.0
 
 Start a new Django project, named ``<project_name>``, using the template. This
 will be your Python import path.
