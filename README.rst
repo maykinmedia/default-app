@@ -26,7 +26,7 @@ will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml --name LICENSE <project_name> .
+    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml -x .github --name LICENSE <project_name> .
 
 {% endcomment %}
 
