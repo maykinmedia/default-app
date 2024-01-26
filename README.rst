@@ -26,7 +26,7 @@ will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml -x .github --name LICENSE <project_name> .
+    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/main.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml -x .github --name LICENSE <project_name> .
 
 {% endcomment %}
 
@@ -98,7 +98,7 @@ To install and develop the library locally, use::
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
 
-.. |coverage| image:: https://codecov.io/gh/maykinmedia/{{ project_name }}/branch/master/graph/badge.svg
+.. |coverage| image:: https://codecov.io/gh/maykinmedia/{{ project_name }}/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/maykinmedia/{{ project_name }}
     :alt: Coverage status
 
