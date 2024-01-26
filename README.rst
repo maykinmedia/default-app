@@ -17,16 +17,16 @@ libraries:
 
 .. code-block:: bash
 
-    $ virtualenv env or virtualenv --python=/usr/bin/python3.9 env
+    $ virtualenv env or virtualenv --python=/usr/bin/python3.10 env
     $ source env/bin/activate
-    $ pip install django
+    $ pip install django~=4.2.0
 
 Start a new Django project, named ``<project_name>``, using the template. This
 will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml --name LICENSE <project_name> .
+    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/master.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml -x .github --name LICENSE <project_name> .
 
 {% endcomment %}
 
@@ -36,7 +36,7 @@ Welcome to {{ project_name }}'s documentation!
 :Version: 0.1.0
 :Source: https://github.com/maykinmedia/{{ project_name }}
 :Keywords: ``<keywords>``
-:PythonVersion: 3.9
+:PythonVersion: 3.10
 
 |build-status| |code-quality| |black| |coverage| |docs|
 
@@ -60,9 +60,8 @@ Installation
 Requirements
 ------------
 
-* Python 3.7 or above
-* setuptools 30.3.0 or above
-* Django 2.2 or newer
+* Python 3.10 or above
+* Django 4.2 or newer
 
 
 Install
@@ -85,7 +84,7 @@ To install and develop the library locally, use::
 
 .. code-block:: bash
 
-    pip install -e --no-build-isolation .[tests,coverage,docs,pep8,release]
+    pip install -e --no-build-isolation .[tests,coverage,docs,release]
 
 
 .. |build-status| image:: https://github.com/maykinmedia/{{ project_name }}/workflows/Run%20CI/badge.svg

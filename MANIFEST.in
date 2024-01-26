@@ -6,4 +6,3 @@ recursive-include {{ project_name }} *.txt
 recursive-include {{ project_name }} *.po
 global-exclude __pycache__
 global-exclude *.py[co]
-

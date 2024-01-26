@@ -13,10 +13,10 @@
 import sys
 from pathlib import Path
 
-current_dir = Path(__file__).parent.parent
+current_dir = Path(__file__).parents[1]
 code_directory = current_dir / "{{ project_name|lower }}"
 
-sys.path.insert(0, code_directory)
+sys.path.insert(0, str(code_directory))
 
 
 # -- Project information -----------------------------------------------------
