@@ -38,7 +38,9 @@ jobs:
 
       - name: Run basic checks
         run: |
-          django-admin check
+          pip install pytest
+          python -m django check
           pytest
         env:
           DJANGO_SETTINGS_MODULE: testapp.settings
+        working-directory: tmp
