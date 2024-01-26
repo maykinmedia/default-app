@@ -4,6 +4,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent
 
 SECRET_KEY = "so-secret-i-cant-believe-you-are-looking-at-this"
 
+USE_TZ = True
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
