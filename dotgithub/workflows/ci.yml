@@ -27,13 +27,10 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: Install dependencies
-        run: pip install tox tox-gh-actions codecov
+        run: pip install tox tox-gh-actions
 
       - name: Run tests
-        run: |
-          export TOXENV=py${PYTHON_VERSION/./}-django${DJANGO/./}
-          tox
-          codecov -e TOXENV,DJANGO --file reports/coverage-${TOXENV}.xml
+        run: tox
         env:
           PYTHON_VERSION: ${{ matrix.python }}
           DJANGO: ${{ matrix.django }}
@@ -58,6 +55,8 @@ jobs:
         run: |
           pip install build --upgrade
           python -m build
+
+      # TODO: switch to verified publishers
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:

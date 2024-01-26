@@ -28,4 +28,17 @@ jobs:
       - name: Run the startproject command
         run: |
           mkdir tmp
-          django-admin startproject --template . --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml --name LICENSE -x tmp -x .github -x .github defaultapp tmp/
+          django-admin startproject \
+            --template . \
+            --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml \
+            --name LICENSE \
+            -x tmp \
+            -x .github \
+            defaultapp tmp/
+
+      - name: Run basic checks
+        run: |
+          django-admin check
+          pytest
+        environment:
+          DJANGO_SETTINGS_MODULE=testapp.settings
