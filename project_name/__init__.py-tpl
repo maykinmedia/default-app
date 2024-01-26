@@ -1,1 +1,0 @@
-default_app_config = "{{ project_name }}.apps.{{ camel_case_project_name }}Config"
