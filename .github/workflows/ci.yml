@@ -42,3 +42,4 @@ jobs:
           pytest
         env:
           DJANGO_SETTINGS_MODULE: testapp.settings
+        working-directory: tmp
