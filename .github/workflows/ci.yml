@@ -40,5 +40,5 @@ jobs:
         run: |
           django-admin check
           pytest
-        environment:
+        env:
           DJANGO_SETTINGS_MODULE=testapp.settings
