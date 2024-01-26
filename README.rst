@@ -9,24 +9,35 @@ placed in your home directory.
 
 .. code-block:: bash
 
-    $ mkdir <project_root>
-    $ cd <project_root>
+    mkdir <project_root>
+    cd <project_root>
 
 Create the virtual environment that holds your copy of Python and relevant
 libraries:
 
 .. code-block:: bash
 
-    $ virtualenv env or virtualenv --python=/usr/bin/python3.10 env
-    $ source env/bin/activate
-    $ pip install django~=4.2.0
+    virtualenv env or virtualenv --python=/usr/bin/python3.10 env
+    source env/bin/activate
+    pip install django~=4.2.0
 
 Start a new Django project, named ``<project_name>``, using the template. This
 will be your Python import path.
 
 .. code-block:: bash
 
-    $ django-admin startproject --template=https://github.com/maykinmedia/default-app/archive/main.zip --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml -x .github --name LICENSE <project_name> .
+    django-admin startproject \
+        --template=https://github.com/maykinmedia/default-app/archive/main.zip \
+        --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml \
+        -x .github \
+        --name LICENSE \
+        <project_name> .
+
+And then set up the Github actions workflows:
+
+.. code-block:: bash
+
+    mv dotgithub .github
 
 {% endcomment %}
 
@@ -84,7 +95,17 @@ To install and develop the library locally, use::
 
 .. code-block:: bash
 
-    pip install -e --no-build-isolation .[tests,coverage,docs,release]
+    pip install -e .[tests,coverage,docs,release]
+
+When running management commands via ``django-admin``, make sure to add the root
+directory to the python path (or use ``python -m django <command>``):
+
+.. code-block:: bash
+
+    export PYTHONPATH=. DJANGO_SETTINGS_MODULE=testapp.settings
+    django-admin check
+    # or other commands like:
+    # django-admin makemessages -l nl
 
 
 .. |build-status| image:: https://github.com/maykinmedia/{{ project_name }}/workflows/Run%20CI/badge.svg

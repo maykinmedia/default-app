@@ -37,7 +37,7 @@ Documentation = "http://{{ project_name|lower }}.readthedocs.io/en/latest/"
 "Source Code" = "https://github.com/maykinmedia/{{ project_name|lower }}"
 
 [project.optional-dependencies]
-test = [
+tests = [
     "pytest",
     "pytest-django",
     "tox",
@@ -56,6 +56,10 @@ release = [
     "bump-my-version",
     "twine",
 ]
+
+[tool.setuptools.packages.find]
+include = ["{{ project_name|lower }}*"]
+namespaces = false
 
 [tool.isort]
 profile = "black"

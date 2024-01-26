@@ -36,9 +36,18 @@ jobs:
             -x .github \
             defaultapp tmp/
 
-      - name: Run basic checks
+      - name: Run basic checks (following README instructions)
         run: |
+          pip install -e .[tests]
           django-admin check
           pytest
         env:
+          PYTHONPATH: .
           DJANGO_SETTINGS_MODULE: testapp.settings
+        working-directory: tmp
+
+      - name: Run dummy package build
+        run: |
+          pip install build
+          python -m build
+        working-directory: tmp
