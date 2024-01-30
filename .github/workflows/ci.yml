@@ -30,7 +30,7 @@ jobs:
           mkdir tmp
           django-admin startproject \
             --template . \
-            --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml \
+            --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml,yaml \
             --name LICENSE \
             -x tmp \
             -x .github \
