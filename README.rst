@@ -28,7 +28,7 @@ will be your Python import path.
 
     django-admin startproject \
         --template=https://github.com/maykinmedia/default-app/archive/main.zip \
-        --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml \
+        --extension=py-tpl,rst,gitignore,in,ini,cfg,toml,yml,yaml \
         -x .github \
         --name LICENSE \
         <project_name> .
