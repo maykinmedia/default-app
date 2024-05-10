@@ -40,13 +40,11 @@ Documentation = "http://{{ project_name|lower }}.readthedocs.io/en/latest/"
 tests = [
     "pytest",
     "pytest-django",
+    "pytest-cov",
     "tox",
     "isort",
     "black",
     "flake8",
-]
-coverage = [
-    "pytest-cov",
 ]
 docs = [
     "sphinx",
@@ -54,16 +52,16 @@ docs = [
 ]
 release = [
     "bump-my-version",
-    "twine",
 ]
 
 [tool.setuptools.packages.find]
 include = ["{{ project_name|lower }}*"]
-namespaces = false
+namespaces = true
 
 [tool.isort]
 profile = "black"
 combine_as_imports = true
+skip = ["env", ".tox", ".history", ".eggs"]
 known_django = "django"
 known_first_party="{{ project_name|lower }}"
 sections=["FUTURE", "STDLIB", "DJANGO", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
@@ -78,6 +76,14 @@ files = [
     {filename = "pyproject.toml"},
     {filename = "README.rst"},
     {filename = "docs/conf.py"},
+]
+
+[tool.coverage.run]
+branch = true
+source = ["{{ project_name|lower }}"]
+omit = [
+    # migrations run while django initializes the test db
+    "*/migrations/*",
 ]
 
 [tool.coverage.report]
