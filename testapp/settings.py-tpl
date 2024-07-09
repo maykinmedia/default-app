@@ -6,6 +6,8 @@ SECRET_KEY = "so-secret-i-cant-believe-you-are-looking-at-this"
 
 USE_TZ = True
 
+DEBUG = True
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
