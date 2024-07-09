@@ -18,13 +18,13 @@ jobs:
         python: ['3.10', '3.11', '3.12']
         django: ['4.2']
 
-    name: Run the test suite (Python ${{ matrix.python }}, Django ${{ matrix.django }})
+    name: Run the test suite (Python ${% templatetag openvariable %} matrix.python {% templatetag closevariable %}, Django ${% templatetag openvariable %} matrix.django {% templatetag closevariable %})
 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: ${% templatetag openvariable %} matrix.python {% templatetag closevariable %}
 
       - name: Install dependencies
         run: pip install tox tox-gh-actions
@@ -32,13 +32,13 @@ jobs:
       - name: Run tests
         run: tox
         env:
-          PYTHON_VERSION: ${{ matrix.python }}
-          DJANGO: ${{ matrix.django }}
+          PYTHON_VERSION: ${% templatetag openvariable %} matrix.python {% templatetag closevariable %}
+          DJANGO: ${% templatetag openvariable %} matrix.django {% templatetag closevariable %}
 
       - name: Publish coverage report
         uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${% templatetag openvariable %} secrets.CODECOV_TOKEN {% templatetag closevariable %}
 
   publish:
     name: Publish package to PyPI
@@ -63,4 +63,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
+          password: ${% templatetag openvariable %} secrets.PYPI_TOKEN {% templatetag closevariable %}
