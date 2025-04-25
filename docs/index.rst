@@ -5,7 +5,7 @@
 Welcome to {{ project_name }}'s documentation!
 =================================================
 
-|build-status| |code-quality| |black| |coverage| |docs|
+|build-status| |code-quality| |ruff| |coverage| |docs|
 
 |python-versions| |django-versions| |pypi-version|
 
@@ -41,8 +41,9 @@ Indices and tables
      :alt: Code quality checks
      :target: https://github.com/maykinmedia/{{ project_name }}/actions?query=workflow%3A%22Code+quality+checks%22
 
-.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/psf/black
+.. |ruff| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+    :target: https://github.com/astral-sh/ruff
+    :alt: Ruff
 
 .. |coverage| image:: https://codecov.io/gh/maykinmedia/{{ project_name }}/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/maykinmedia/{{ project_name }}
