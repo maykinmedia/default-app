@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0.0"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,7 +10,8 @@ authors = [
     {name = "Maykin Media", email = "support@maykinmedia.nl"}
 ]
 readme = "README.rst"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 keywords = ["TODO"]
 classifiers = [
     "Development Status :: 3 - Alpha",
