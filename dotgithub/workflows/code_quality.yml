@@ -32,3 +32,4 @@ jobs:
       - run: tox
         env:
           TOXENV: ${% templatetag openvariable %} matrix.toxenv {% templatetag closevariable %}
+          FORCE_COLOR: "1"
