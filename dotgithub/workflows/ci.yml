@@ -26,13 +26,13 @@ jobs:
     name: Run the test suite (Python ${% templatetag openvariable %} matrix.python {% templatetag closevariable %}, Django ${% templatetag openvariable %} matrix.django {% templatetag closevariable %})
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: ${% templatetag openvariable %} matrix.python {% templatetag closevariable %}
 
       - name: Install dependencies
-        run: pip install tox tox-gh-actions
+        run: pip install tox tox-uv tox-gh-actions
 
       - name: Run tests
         run: tox
@@ -56,8 +56,8 @@ jobs:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
