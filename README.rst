@@ -39,6 +39,18 @@ And then set up the Github actions workflows:
 
     mv dotgithub .github
 
+Finally, run the CI hardening step (or when CI complains about it) with zizmor_:
+
+.. code-block:: bash
+
+    zizmor .github --fix
+
+The template repository deliberately uses unpinned action references so that new
+libraries get the latest action versions, relying on zizmor to ensure they are pinned
+to particular commit hashes.
+
+.. _zizmor: https://docs.zizmor.sh/
+
 {% endcomment %}
 
 Welcome to {{ project_name }}'s documentation!
